@@ -1,103 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/css/ol.css"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/build/ol.js"> </script>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=fetch,requestAnimationFrame,Element.prototype.classList,URL"></script>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    
+    <!-- CSS only -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+
+  </head>
 
 
-    <link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/css/ol.css"
-        type="text/css">
-    <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
-    <style>
-        #map {
-            height: 400px;
-            width: 100%;
-        }
-    </style>
 
-    <title>GIS WEBAPP</title>
-</head>
 
-<body>
-    <div class="a">
-        <div class="jumbotron text-center">
-            <h2>GIS BASED APPLICATION</h2>
-             
-          </div>
-        
-        <div class="aa">
-            <div class="topnav" id="myTopnav">
-                <a href="#home" class="active">Home</a>
-                <a href="#news">News</a>
-                <a href="#contact">Contact</a>
-                <div class="dropdown">
-                  <button class="dropbtn">Dropdown
-                    <i class="fa fa-caret-down"></i>
-                  </button>
-                  <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-                  </div>
-                </div>
-                <a href="#about">About</a>
-                <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
-              </div>
-           
-        </div>
-        <div class="ac">
-            <div class="aca">
-                <p>
-                    <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button"
-                        aria-expanded="false" aria-controls="multiCollapseExample1">Toggle first element</a>
-                    <button class="btn btn-primary" type="button" data-toggle="collapse"
-                        data-target="#multiCollapseExample2" aria-expanded="false"
-                        aria-controls="multiCollapseExample2">Toggle second element</button>
-                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse"
-                        aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Toggle both
-                        elements</button>
-                </p>
-                <div class="row">
-                    <div class="col">
-                        <div class="collapse multi-collapse" id="multiCollapseExample1">
-                            <div class="card card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
-                                squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
-                                sapiente ea proident.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="collapse multi-collapse" id="multiCollapseExample2">
-                            <div class="card card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
-                                squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
-                                sapiente ea proident.
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  
 
-            </div>
-            <div class="acb">
-                <div class="acba aa">Toolbar</div>
-                <div class="acbb aa">
-                    <div id="map"></div>
-                    <script src="index.js"></script>
-
-                </div>
-            </div>
-        </div>
-        <div class="aa">Messages</div>
+  <body>
+    <div class="header">
+      <h1>OSM_v1.0</h1>
     </div>
-</body>
 
+    <div class="topnav">
+      <a href="https://drdo.gov.in/labs-and-establishments/institute-systems-studies-analyses-issa"> Lab Home</a>
+      <a href="https://drdo.gov.in/labs-establishment/about-us/institute-systems-studies-analyses-issa">About Lab</a>
+      <a href="https://drdo.gov.in/labs-establishment/director/institute-systems-studies-analyses-issa" >Director</a>
+      <a href="https://drdo.gov.in/labs-establishment/contact-us/institute-systems-studies-analyses-issa" style="float: right;">Contact Us</a>
+    </div>
+
+    <div class="row">
+      <div class="leftcolumn">
+        <div class="card">
+          <h2></h2>
+          <h5></h5>
+          <div class="toolbar" >Toolbar  </div>
+          <div id ="map" class="map">
+            <script src="index.js"></script>
+          </div>
+          <p>
+            <b>Web based GIS App </b> for easy and fast dissemination, sharing,
+            displaying and processing of spatial information which in turns
+            helping in decision making for various natural resources based
+            application.
+            <style>font-family: sans-serif;</style>
+          </p>
+        </div>
+        <div class="card">
+          <!-- <h2>TITLE HEADING</h2>
+        <h5>Title description, Sep 2, 2017</h5>
+        <div class="fakeimg" style="height: 200px;">Image</div>
+        <p>
+          Sunt in culpa qui officia deserunt mollit anim id est laborum
+          consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+          exercitation ullamco.
+        </p> -->
+        </div>
+      </div>
+      <div class="rightcolumn">
+        <div class="card">
+          <h2>About Me</h2>
+          <div class="fakeimg" style="height: 100px;">Image</div>
+          <p>
+            Pre-final year undergraduate in Information Technology with 2+ years
+            of data analysing experience. Strong understanding of data modeling,
+            data visualization using Python. In-depth knowledge of data
+            structures and algorithms. Capable professional with great
+            communication and leading skills. A keen eye for detail, exceptional
+            multi-tasking capabilities.
+          </p>
+        </div>
+        <div class="card">
+          <h3>About DRDO</h3>
+          <div class="fakeimg">
+            <img src="./assets/cmpny1.png" alt="Italian Trulli" />
+          </div>
+        </div>
+        <div class="card">
+          <h3>Follow Me</h3>
+          <p>Some text..</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <h2>Footer</h2>
+    </div>
+  </body>
 </html>
