@@ -1,5 +1,5 @@
 {
-    "name": "layer-swipe",
+    "name": "rotation",
     "dependencies": {
       "ol": "6.3.1"
     },
