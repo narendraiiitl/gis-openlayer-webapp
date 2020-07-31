@@ -1,6 +1,3 @@
-
-
-
 var map = new ol.Map({
   target: 'map',
   layers: [
@@ -12,7 +9,7 @@ var map = new ol.Map({
   target: 'map',
   view: new ol.View({
     center: ol.proj.fromLonLat([77.1025, 28.7041]),
-    rotation: Math.PI / 6,
+    rotation: Math.PI / 10,
     zoom: 8
     
   })

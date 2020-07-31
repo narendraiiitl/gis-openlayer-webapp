@@ -6,6 +6,10 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/css/ol.css"
     type="text/css" />
   <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/build/ol.js"> </script>
+  <script
+    src="https://cdn.polyfill.io/v2/polyfill.min.js?features=fetch,requestAnimationFrame,Element.prototype.classList,URL"></script>
+  <!-- Pointer events polyfill for old browsers, see https://caniuse.com/#feat=pointer -->
+  <script src="https://unpkg.com/@openlayers/pepjs"></script>
 
   <!-- CSS only -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -19,8 +23,9 @@
     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    integrity="s84-OgVRvha3uATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
     crossorigin="anonymous"></script>
+
   <title>OpenStreetMapv1.0</title>
 </head>
 
@@ -31,34 +36,47 @@
     <h1>OpenStreetMapv1.0</h1>
   </div>
 
-  <div class="topnav">
-    <a href="https://drdo.gov.in/labs-and-establishments/institute-systems-studies-analyses-issa" target="_blank"> Lab Home </a>
-    <a href="https://drdo.gov.in/labs-establishment/about-us/institute-systems-studies-analyses-issa" target="_blank">About Lab</a>
-    <a href="https://drdo.gov.in/labs-establishment/director/institute-systems-studies-analyses-issa" target="_blank">Director</a>
-    <a href="https://drdo.gov.in/labs-establishment/contact-us/institute-systems-studies-analyses-issa target="_blank""
+  <div class=" topnav">
+    <a href="https://drdo.gov.in/labs-and-establishments/institute-systems-studies-analyses-issa" target="_blank"> Lab
+      Home </a>
+    <a href="https://drdo.gov.in/labs-establishment/about-us/institute-systems-studies-analyses-issa"
+      target="_blank">About Lab</a>
+    <a href="https://drdo.gov.in/labs-establishment/director/institute-systems-studies-analyses-issa"
+      target="_blank">Director</a>
+    <a href="https://drdo.gov.in/labs-establishment/contact-us/institute-systems-studies-analyses-issa target=" _blank""
       style="float: right;">Contact Us</a>
   </div>
 
   <div class="row">
     <div class="leftcolumn">
       <div class="card">
-        <h2></h2>
-        <h5></h5>
+
         <div class="toolbar">Toolbar </div>
         <div id="map" class="map">
-          
+
           <script src="index.js"></script>
+          <br>
+          <form class="form-inline">
+            <label>Geometry type &nbsp;</label>
+            <select id="type">
+              <option value="Point">Point</option>
+              <option value="LineString">LineString</option>
+              <option value="Polygon">Polygon</option>
+              <option value="Circle">Circle</option>
+              <option value="None">None</option>
+            </select>
+          </form>
         </div> <br> <br> <br>
         <hr>
-        <p >
-          
+        <p>
+
           <b>Web based GIS App </b> for easy and fast dissemination, sharing,
           displaying and processing of spatial information which in turns
           helping in decision making for various natural resources based
           application.
-          <style>
-            font-family: sans-serif;
-          </style>
+          <br>
+          > Use Shift+Alt to Rotate the Map
+
         </p>
         <hr>
       </div>
@@ -69,7 +87,9 @@
     <div class="rightcolumn">
       <div class="card">
         <h2>About Me</h2>
-        <div class="fakeimg" style="height: 100px;">Image</div>
+        <div class="fakeimg" style="height: 100px;">
+          <img src="./assets/aboutme.jpg" alt="Italian Trulli" /></div>
+        <br><br><br> <br><br><br>
         <p>
           Pre-final year undergraduate in Information Technology with 2+ years
           of data analysing experience. Strong understanding of data modeling,
@@ -80,8 +100,7 @@
           <style>
             font-family: sans-serif;
           </style>
-        </p>
-      </div>
+        </p> </div>
       <div class="card">
         <h3>About DRDO</h3>
         <div class="fakeimg">
@@ -90,14 +109,14 @@
       </div>
       <div class="card">
         <h3>Follow Me</h3>
-        <p>Some text..</p>
+        <p>Some text.</p>
       </div>
     </div>
   </div>
 
-  <div class="footer footer-copyright text-center py-3">© 2020 Copyright:
+  <div class="footer footer-copyright text-center py-3">
     <a href="https://github.com/sakshamv30" target="_blank"> Made with Love</a>
   </div>
-</<body>
+  </<body>
 
 </html>
